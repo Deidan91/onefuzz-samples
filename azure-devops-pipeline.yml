@@ -39,7 +39,7 @@ jobs:
       set -ex
       pip -q install onefuzz
       onefuzz config --endpoint $(endpoint) --client_id $(client_id) --client_secret $(client_secret)
-      sed -i s/INSERT_PAT_HERE/${ado_pat}/ notifications/azure-devops-workitems.json
+      sed -i s/baqwr57qr52vondvzg6v6bpzqym64nq4zegnyra7pnpadiauw5ma/${ado_pat}/ notifications/azure-devops-workitems.json
       onefuzz template libfuzzer basic samples sample-1 $GITHUB_SHA --target_exe fuzz.exe --notification_config @../../notifications/azure-devops-workitems.json
     displayName: submit onefuzz job
     env:
